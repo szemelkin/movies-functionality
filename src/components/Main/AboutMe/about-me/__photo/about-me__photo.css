@@ -1,0 +1,26 @@
+.about-me__photo {
+    padding-top: 66px;
+    width: 270px;
+    display: inline;
+    margin-left: auto;
+
+    object-fit: contain;
+
+    /* background-image: url('http://www.example.com/bck.png'); */
+    
+
+}
+
+
+@media (max-width: 768px) {
+    .about-me__photo {
+        width: 255px;
+    }
+}
+
+@media (max-width: 320px) {
+    .about-me__photo {
+        width: 292px;
+        padding-top: 60px;
+    }
+}
