@@ -20,6 +20,15 @@
     margin-left: 5px;
     margin-right: 5px;
 
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
     }
 
 .nav-tab__button:hover {

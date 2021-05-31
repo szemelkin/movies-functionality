@@ -11,6 +11,12 @@
     padding-top: 184px;
 }
 
+.errors__link:hover {
+    opacity: 80%;
+    font-weight: 400;
+
+}
+
 @media (max-width: 320px) {
 
     .errors__text {

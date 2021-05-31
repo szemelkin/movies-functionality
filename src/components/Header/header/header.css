@@ -3,6 +3,14 @@
 @import url(./__link/header__link.css);
 @import url(./__menu/header__menu.css);
 @import url(./__profile-link/header__profile-link.css);
+@import url(./__burger-icon/header__burger.css);
+@import url(./__burger-button/header__burger-button.css);
+@import url(./__invisible/header__invisible.css);
+@import url(./__burger-menu/header__burger-menu.css);
+@import url(./__link/header__link_type_burger.css);
+@import url(./__burger-menu-links/header__burger-menu-links.css);
+@import url(./__burger-menu-links-left/header__burger-menu-links-left.css);
+@import url(./__burger-button/header__burger-button_type_black.css);
 
 
 
@@ -19,6 +27,8 @@
     height: 74px;
 
 }
+
+
 
 
 @media (max-width: 425px) {
