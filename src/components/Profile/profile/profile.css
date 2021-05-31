@@ -19,3 +19,9 @@
 
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    .profile {
+        width: 339px !important;
+    }
+}
