@@ -25,7 +25,7 @@
 
 @media all and (max-width: 768px) {
     .nav-tab {
-        height: 834px;
+        height: calc(834*100%/768);
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -34,7 +34,7 @@
 @media (max-width: 320px) {
 
     .nav-tab {
-        height: 586px;
+        height: calc(568*100%/320);
         margin-left: 14px;
         margin-right: 14px;
     }

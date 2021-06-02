@@ -11,6 +11,9 @@
     .techs__buttons {
         padding-top: 80px;
         padding-bottom: 90px;
+        padding-top: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 

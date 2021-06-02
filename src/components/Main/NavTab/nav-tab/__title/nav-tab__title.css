@@ -11,7 +11,7 @@
     
     color: #FFFFFF;
 
-    padding-top: 160px;
+    padding-top: calc(160*100%/1280);
 
     margin-left: auto;
     margin-right: auto;
@@ -24,7 +24,7 @@
         font-size: 40px;
         line-height: 52px;
 
-        padding-top: 350px;
+        padding-top: calc(350*100%/768);;
         padding-left: 24px;
         padding-right: 24px;
 

@@ -9,7 +9,7 @@
 @media all and (max-width: 768px) {
     .nav-tab__buttons {
 
-        padding-top: 314px;
+        padding-top: calc(314*100%/768);
 
     }
 }
@@ -17,7 +17,7 @@
 @media all and (max-width: 320px) {
     .nav-tab__buttons {
 
-        padding-top: 212px;
+        padding-top: calc(212*100%/320);
 
     }
 }

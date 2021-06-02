@@ -1,20 +1,14 @@
 .header__burger-menu {
-    /* width: calc(520 / 768)vw; */
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    background-color: #202020;
-    opacity: 0.3;
-
     display: flex;
     flex-direction: row;
-    justify-content: flex-end; */
+}
 
-    display: flex;
-    flex-direction: row;
-
-
+@media (max-width: 320px) {
+    .header__burger-menu {
+        display:inline;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%; 
+    }
 }

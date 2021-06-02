@@ -6,17 +6,8 @@
 @import url('./__title/movies-card__title.css');
 @import url('./__icon/movies-card__icon.css');
 
-@media (max-width: 320px) {
-    .movies-card {
-        width: 300px;
-    }
-}
 
-@media (min-width: 321px) and (max-width: 768px) {
-    .movies-card {
-        width: 339px;
-    }
-}
+
 
 .movies-card {
     width: 364px;
@@ -26,5 +17,16 @@
     margin-top: 30px;
 }
 
+@media (min-width: 321px) and (max-width: 768px) {
+    .movies-card {
+        width: 339px;
+    }
+}
+
+@media (max-width: 320px) {
+    .movies-card {
+        width: 300px;
+    }
+}
 
 
