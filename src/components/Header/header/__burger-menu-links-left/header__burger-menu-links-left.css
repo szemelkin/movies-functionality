@@ -11,9 +11,9 @@
     opacity: 0.5;
 }
 
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
     .header__burger-menu-links-left {
         opacity: 1;
         width: 0vw;
     }
-}
+} */
