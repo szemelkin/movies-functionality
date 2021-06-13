@@ -3,21 +3,26 @@ import { useEffect, useState, useContext } from 'react'
 import './search-form/search-form.css'
 import searchIcon from '../../../images/search.svg';
 
-const SearchForm = (props) => {
+const SearchFormSavedMovies = (props) => {
 
     const [dataSearch, setDataSearch] = useState()
 
     
         const handleSearchInput = (e) => {
             handleChange(e)
+            
+            // console.log('handleSearchInput',dataSearch)
         }
 
         useEffect(() => {
             props.handleSearchFrase(dataSearch)
+            console.log('SearchForm',dataSearch)
         },[dataSearch])
 
 
     const handleChange = (e) => {
+        // console.log('e.target', e.target)
+        // console.log('e.target.value', e.target.value)
         const {name, value} = e.target;
         setDataSearch(data => ({
             ...data,
@@ -46,4 +51,4 @@ const SearchForm = (props) => {
 
 };
 
-export default SearchForm;
+export default SearchFormSavedMovies;

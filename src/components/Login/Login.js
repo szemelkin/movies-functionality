@@ -6,8 +6,17 @@ import { useEffect, useState, useContext } from 'react'
 
 import { Link, useHistory, useLocation } from 'react-router-dom'
 
-const Register = () => {
+const Login = ({onLogin}) => {
 
+    const initialLoginData = {
+        name: '',
+        email: '',
+    }
+
+    const [dataLogin, setDataLogin] = useState(initialLoginData)
+    const history = useHistory();
+
+    //Стейты для валидации
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -17,8 +26,12 @@ const Register = () => {
     const [emailError, setEmailError] = useState('Емейл не может быть пустым')
     const [passwordError, setPasswordError] = useState('Пароль не может быть пустым')
 
+    const [message, setMessage] = useState('')
+
     const [formValid, setFormValid] = useState(false)
 
+
+    //Проверка наличия емейла и пароля
     useEffect( () => {
         if (emailError || passwordError) {
             setFormValid(false)
@@ -30,6 +43,7 @@ const Register = () => {
     
     const emailHandler = (e) => {
         setEmail(e.target.value)
+        handleChange(e)
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(String(email).toLowerCase())) {
             setEmailError('Некорректный емейл')
@@ -40,6 +54,7 @@ const Register = () => {
 
     const passwordHandler = (e) => {
         setPassword(e.target.value)
+        handleChange(e)
         if (e.target.value.length < 3 || e.target.value.length > 20) {
             setPasswordError('Пароль должен быть длиннее 3 и короче 20 символов')
             if(!e.target.value) {
@@ -64,8 +79,33 @@ const Register = () => {
         }
     }
 
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setDataLogin(data => ({
+            ...data,
+            [name]:value
+        }))
+    }
+
+    const resetForm = () => {
+        setPasswordError('')
+        setEmailError('')
+        setMessage('');
+    }
+    
+    const handleSubmit = (e) => {    
+        e.preventDefault();
+        if (!dataLogin.email || !dataLogin.password) {
+            return;
+        }
+        onLogin(dataLogin)
+            .then(resetForm)
+            .then(() => history.push('/movies'))
+            .catch(err => setMessage(err.message || 'Что-то пошло не так!'))
+        }
+
     return (
-        <form className="register">            
+        <form onSubmit = {handleSubmit} className="register">            
             <img className="header__logo header__logo_type_register" src={reactLogo} alt="Логотип место"/>
             <h1 className="profile__title profile__title_type_register">Рады видеть!</h1>
 
@@ -96,6 +136,7 @@ const Register = () => {
                     type="password" 
                     required 
                     placeholder = "password"
+                    autoComplete="on"
                 />
                 {(passwordDirty && passwordError) && <span className="register__input-error" id="modal__input-password-error">{passwordError}</span>}
             </div>
@@ -113,4 +154,4 @@ const Register = () => {
 
 };
 
-export default Register;
+export default Login;

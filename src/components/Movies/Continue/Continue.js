@@ -1,10 +1,11 @@
 import React from 'react';
 import './continue/continue.css'
 
-const Continue = () => {
+const Continue = (props) => {
+
     return (
         <div className="continue">
-            <button className="continue__button">
+            <button className="continue__button" onClick = {props.handleClickContinue}>
                 <p className="continue__text">Ещё</p>
             </button>
         </div>
